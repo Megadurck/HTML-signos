@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Consulta ao Signo</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="signo.js"></script>
+</head>
+<body>
+    <div class="form-container">
+        <h1>Consulte seu Signo</h1>
+        <form id="form">
+            <label for="data-nascimento">Data de Nascimento:</label>
+            <input type="date" id="data-nascimento" name="data-nascimento" required>
+            <button type="submit">Consultar Signo</button>
+        </form>
+    </div>
+
+    <script>
+        document.getElementById("form").addEventListener("submit", function(event) {
+            event.preventDefault(); // Impede o envio do formulário
+
+            // Obtendo a data inserida
+            const dataNascimento = new Date(document.getElementById("data-nascimento").value);
+            const signo = consultarSigno(dataNascimento);
+
+            if (signo) {
+                // Passar o signo e a descrição para a página de resultado
+                localStorage.setItem("signo", JSON.stringify(signo));
+                window.location.href = "resultado.html"; // Redireciona para a página de resultado
+            } else {
+                alert("Não conseguimos determinar seu signo. Tente novamente.");
+            }
+        });
+    </script>
+</body>
+</html>

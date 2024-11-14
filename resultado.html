@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resultado do Signo</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="result-container">
+        <h1>Seu Signo é:</h1>
+        <img id="signo-imagem" src="" alt="Imagem do Signo" style="max-width: 200px; margin-bottom: 10px;">
+        <p id="signo-resultado"></p>
+        <p id="descricao-resultado"></p>
+        <a href="index.html">Nova Consulta</a>
+    </div>
+
+    <script>
+        // Recupera os dados do signo armazenados no localStorage
+        const signo = JSON.parse(localStorage.getItem("signo"));
+
+        if (signo) {
+            // Exibe o nome do signo e a descrição
+            document.getElementById("signo-resultado").textContent = signo.nome;
+            document.getElementById("descricao-resultado").textContent = signo.descricao;
+            // Exibe a imagem correspondente ao signo
+            document.getElementById("signo-imagem").src = signo.imagem;
+        } else {
+            document.getElementById("signo-resultado").textContent = "Erro ao carregar o signo.";
+        }
+    </script>
+</body>
+</html>

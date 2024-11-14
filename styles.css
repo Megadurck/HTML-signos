@@ -1,0 +1,81 @@
+body {
+    font-family: Arial, sans-serif;
+    
+    background-image: url('imagem/signos-zodiaco.jpg'); /* Substitua pelo caminho da sua imagem */
+    background-size: 100% 100%; /* Faz com que a imagem cubra toda a tela */
+    background-position: center; /* Centraliza a imagem */
+    background-repeat: no-repeat; /* Não repete a imagem */
+    background-attachment: fixed; /* A imagem fica fixa enquanto o conteúdo rola */
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+
+.form-container, .result-container {
+    text-align: center;
+    padding: 2rem;
+    border: 2px solid #8a2be2;
+    border-radius: 8px;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+    color: #8a2be2;
+}
+
+input[type="date"], button {
+    padding: 0.5rem;
+    margin-top: 1rem;
+    border-radius: 4px;
+    border: 1px solid #8a2be2;
+}
+
+button {
+    background-color: #8a2be2;
+    color: #fff;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #6a0dad;
+}
+
+.result-container a {
+    display: inline-block;
+    margin-top: 1rem;
+    color: #8a2be2;
+    text-decoration: none;
+}
+
+.result-container a:hover {
+    text-decoration: underline;
+}
+
+#signo-resultado {
+    font-weight: bold;
+    font-style: italic;
+    font-size: 1.5em;
+    color: #333;
+    font-family: 'Cinzel Decorative', serif; /* Fonte medieval */
+}
+
+#descricao-resultado {
+    font-size: 1.2em;
+    margin-top: 20px;
+    color: #925656;
+    font-style: italic;
+    line-height: 1.6;
+    text-align: justify;
+}
+
+#signo-imagem {
+    max-width: 200px;  /* Limita a largura máxima da imagem */
+    height: auto;      /* Mantém a proporção da imagem */
+    border-radius: 10px;  /* Adiciona borda arredondada */
+    margin-top: 20px;
+}
